@@ -28,7 +28,7 @@ function BasicExample() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <CartWidget/>
+            <CartWidget />
         </Navbar>
     );
 }

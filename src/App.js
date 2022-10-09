@@ -1,15 +1,27 @@
 import NavBar from "./components/NavBar/NavBar";
-import BasicExample from "./components/NavBar/NavBar";
+/* import BasicExample from "./components/NavBar/NavBar"; */
 import './App.css';
-import TokenizarInProgress from "./components/NavBar/ItemListContainer"
+import React from "react";
+import TokenizarInProgress from "./components/NavBar/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
         <NavBar />
-      <h1>Tokenizar in progress</h1>
-        <BasicExample />
-        <TokenizarInProgress/>
-    </div>
+        <Routes>
+          <Route path="/" element={ItemListContainer/>}/>
+          <Route path="/category/:id" element={ItemListContainer/>}/>
+          <Route path="/item/:id" element={ItemDetailContainer/>}/>
+        </Routes>
+        {/* <h1>Tokenizar in progress</h1>
+         <BasicExample/> 
+        <TokenizarInProgress /> */}
+      </div>
+    </BrowserRouter>
+    <footer> Derechos Reservados </footer>
   );
 }
+
+export default App
