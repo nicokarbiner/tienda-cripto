@@ -1,4 +1,19 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+import { Link } from "react-router-dom";
+export default function CartWidget() {
+  return (
+    <div className="CartWidget">
+      <Link to="/cart">
+        <FontAwesomeIcon icon={faCartShopping} />
+      </Link>
+    </div>
+  );
+}
+
+
+/* import React from "react";
 import Badge from 'react-bootstrap/Badge';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,4 +30,4 @@ class CartWidget extends React.Component {
     }
 }
 
-export default CartWidget;
+export default CartWidget; */
