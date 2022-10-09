@@ -21,7 +21,6 @@ export default function ItemListContainer({ title, categoryId }) {
         </Col>
       </Row>
       <Row>
-
         <ItemList items={items} />
       </Row>
 
