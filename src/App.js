@@ -4,20 +4,20 @@ import Home from "./views/Home/Home"
 import Cart from "./views/Cart/Cart"
 import Products from "./views/Products/Products"
 import Category from "./views/Category/Category"
-import Product from "./views/Product/Product"
+import Product from "./views/Category/category"
 
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="*" element={<Home />} />
-          <Route exact path="/products" element={<Products />} />
-          <Route exact path="/product/:productId" element={<Product />} />
-          <Route exact path="/category/:categoryId" element={<Category />} />
-          <Route exact path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="*" element={<Home />} />
+        <Route exact path="/products" element={<Products />} />
+        <Route exact path="/product/:productId" element={<Product />} />
+        <Route exact path="/category/:categoryId" element={<Category />} />
+        <Route exact path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
