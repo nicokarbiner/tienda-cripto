@@ -1,6 +1,37 @@
-import Badge from 'react-bootstrap/Badge';
+import ItemList from "../ItemList/ItemList";
+import { Container, Row, Col } from "react-bootstrap"
+import React from "react";
+import { products } from "../../data/productos";
+export default function ItemListContainer({ title, categoryId }) {
+  const [items, setItems] = React.useState([]);
+  React.useEffect(() => {
+    if (categoryId) {
+      setItems(products.filter(item => item.category_id === +categoryId));
+    }
+    else {
+      setItems(products);
+    }
+  }, [categoryId])
+  return (
+    <Container className="itemlist-container">
+      <Row>
+        <Col>
+          <h1>{title}</h1>
+        </Col>
+      </Row>
+      <Row>
 
-function TokenizarInProgress() {
+        <ItemList items={items} />
+      </Row>
+
+    </Container>
+  );
+}
+
+
+/* import Badge from 'react-bootstrap/Badge';
+
+function ItemListContainer() {
   return (
     <div>
       <h1>
@@ -10,4 +41,4 @@ function TokenizarInProgress() {
   );
 }
 
-export default TokenizarInProgress; 
+export default ItemListContainer;  */
