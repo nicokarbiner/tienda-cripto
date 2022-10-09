@@ -3,17 +3,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "./CartWidget";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 function BasicExample() {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Link to="/inicio">Tokenizar</Link>
+                <NavLink to="/inicio">Tokenizar</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Link to="/inicio">Inicio</Link>
+                        <NavLink to="/inicio">Inicio</NavLink>
                         <Nav.Link href="#link">Contacto</Nav.Link>
                         <NavDropdown title="Criptos" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Criptomonedas</NavDropdown.Item>
