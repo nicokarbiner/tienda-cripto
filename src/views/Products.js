@@ -5,7 +5,7 @@ export default function Products() {
   return (
     <div>
       <Header/>
-      <h1>Listado de Criptos</h1>
+      <h1>Listado de Todas las Criptos Disponibles</h1>
       <ItemListContainer/>
     </div>
   );

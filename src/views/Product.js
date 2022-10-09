@@ -9,7 +9,7 @@ export default function Product () {
     <Container>
       <Row>
         <Col>
-          <ItemDetailContainer title="Mis Cripto" productId={+productId}/>
+          <ItemDetailContainer title="Mis Criptos" productId={+productId}/>
         </Col>
       </Row>
     </Container>
