@@ -4,7 +4,7 @@ export const products = [
       title: "Bitcoin",
       stock: 1000,
       price: 19400,
-      image: "../public/images/1.jpg",
+      image: "./public/images/1.jpg",
       category_id: 1,
       text: "Criptomoneda de las mas importantes del mundo",
     },
@@ -15,6 +15,7 @@ export const products = [
       price: 1315,
       image: "./public/images/2.jpg",
       category_id: 1,
+      text: "Criptomoneda utilizada para smart contracts",
     },
     {
       id: 3,
@@ -23,6 +24,7 @@ export const products = [
       price: 1,
       image: "./public/images/3.jpg",
       category_id: 2,
+      text: "Stablecoin colaterizada en USD",
     },
     {
       id: 4,
@@ -30,6 +32,7 @@ export const products = [
       stock: 1000,
       price: 277,
       image: "./public/images/4.jpg",
-      category_id: 3,
+      category_id: 2,
+      text: "Utility Coin de la red Binance",
     },
   ];

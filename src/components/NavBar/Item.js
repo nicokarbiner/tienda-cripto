@@ -1,5 +1,5 @@
-import {Link, useNavigate} from "react-router-dom"
-import { Card, Button } from "react-bootstrap";
+import {useNavigate} from "react-router-dom"
+import { Card } from "react-bootstrap";
 import AddButton from "./AddButton";
 export default function Item({ item }) {
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ export default function Item({ item }) {
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
-            Descripcion de la Cripto
+            {item.text}
           </Card.Text>
           <h3>$ {item.price}</h3>
           <AddButton />

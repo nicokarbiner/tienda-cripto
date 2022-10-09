@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget";
-import {Navbar, Container, Nav} from "react-bootstrap";
+import {Nav, Navbar, Container} from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom"
+
 export default function Header () {
   return (
     <header>
