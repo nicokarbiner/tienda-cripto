@@ -1,6 +1,6 @@
 import {Link, useNavigate} from "react-router-dom"
 import { Card, Button } from "react-bootstrap";
-import AddButton from "../AddButton/AddButton";
+import AddButton from "./AddButton";
 export default function Item({ item }) {
   const navigate = useNavigate()
   return (
@@ -9,8 +9,7 @@ export default function Item({ item }) {
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Descripcion de la Cripto
           </Card.Text>
           <h3>$ {item.price}</h3>
           <AddButton />

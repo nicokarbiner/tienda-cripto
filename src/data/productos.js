@@ -4,8 +4,9 @@ export const products = [
       title: "Bitcoin",
       stock: 1000,
       price: 19400,
-      image: "./public/images/1.jpg",
+      image: "../public/images/1.jpg",
       category_id: 1,
+      text: "Criptomoneda de las mas importantes del mundo",
     },
     {
       id: 2,

@@ -1,17 +1,18 @@
-import ItemList from "./ItemList/ItemList";
-import { Container, Row, Col } from "react-bootstrap"
+import ItemList from "./ItemList";
+import {Container, Row, Col} from "react-bootstrap"
 import React from "react";
-import { products } from "../../data/productos";
-export default function ItemListContainer({ title, categoryId }) {
+import { products } from "../../data/Productos";
+
+export default function ItemListContainer ({title, categoryId}) {
   const [items, setItems] = React.useState([]);
   React.useEffect(() => {
-    if (categoryId) {
+    if(categoryId){
       setItems(products.filter(item => item.category_id === +categoryId));
     }
-    else {
+    else{
       setItems(products);
     }
-  }, [categoryId])
+  },[categoryId])
   return (
     <Container className="itemlist-container">
       <Row>
@@ -20,25 +21,11 @@ export default function ItemListContainer({ title, categoryId }) {
         </Col>
       </Row>
       <Row>
-
+        
         <ItemList items={items} />
       </Row>
-
+     
     </Container>
   );
 }
 
-
-/* import Badge from 'react-bootstrap/Badge';
-
-function ItemListContainer() {
-  return (
-    <div>
-      <h1>
-        Tokenizar in Progress <Badge bg="secondary">New</Badge>
-      </h1>
-    </div>
-  );
-}
-
-export default ItemListContainer;  */
