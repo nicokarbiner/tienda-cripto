@@ -4,7 +4,7 @@ export const products = [
       title: "Bitcoin",
       stock: 1000,
       price: 19400,
-      image: "images/1",
+      image: "./public/images/1.jpg",
       category_id: 1,
     },
     {
@@ -12,7 +12,7 @@ export const products = [
       title: "Ethereum",
       stock: 1000,
       price: 1315,
-      image: "images/2",
+      image: "./public/images/2.jpg",
       category_id: 1,
     },
     {
@@ -20,7 +20,7 @@ export const products = [
       title: "USDT",
       stock: 1000,
       price: 1,
-      image: "images/3",
+      image: "./public/images/3.jpg",
       category_id: 2,
     },
     {
@@ -28,7 +28,7 @@ export const products = [
       title: "Binance Coin",
       stock: 1000,
       price: 277,
-      image: "images/4",
+      image: "./public/images/4.jpg",
       category_id: 3,
     },
   ];
