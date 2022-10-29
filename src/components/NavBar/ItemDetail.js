@@ -1,15 +1,32 @@
-import {Card} from "react-bootstrap"
+import React from "react"
+import {Container, Row, Col, Card} from "react-bootstrap"
 import AddButton from "./AddButton";
-
+import { CartContext } from "../../context/CartContext";
 export default function ItemDetail ({item}) {
+  // Definimos variables del context
+  const { addToCart, isInCart } = React.useContext(CartContext);
+  // Separamos el estado del count
+  const [count, setCount] = React.useState(1)
+
+
+  
   return (
-    <Card>
+    <Card className="item-detail">
       <Card.Img variant="top" src={item.image} />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text> {item.text}</Card.Text>
+        <Card.Text>{item.text}</Card.Text>
         <h3>$ {item.price}</h3>
-        <AddButton />
+        {!isInCart(item.id) ? (
+          <AddButton
+          onSubmit={() => addToCart(item, count)}
+          count={count}
+          setCount={setCount}
+          stock={item.stock}
+        />
+          ) : (
+            <button>Ir al carrito</button>
+        )}        
       </Card.Body>
     </Card>
   );

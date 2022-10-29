@@ -1,19 +1,11 @@
 import React from "react"
 import { toast } from "react-toastify"
 import { Button } from "react-bootstrap"
+import {CartContext} from "../../context/CartContext"
 /* --------------- Declaracion de nuestro functional component -------------- */
-export default function AddButton() {
-  /* ----------------------- Declaracion del state hook ----------------------- */
-  const [count, setCount] = React.useState(1)
-  const stock = 5
-  
-  /* -------------- Declaracion de un Efecto sobre nuestra cuenta ------------- */
-  React.useEffect(() => {
-    if(count !== 1) {
-      alert("Cambiaste el stock de un producto")
-    }
-  },[count])
+export default function AddButton({count, setCount, stock, onSubmit}) {
 
+  
   /* -------------------- Funcion para aumentar la cantidad ------------------- */
   const onAdd = () => {
     if(count < stock) {
@@ -27,18 +19,7 @@ export default function AddButton() {
       setCount(count - 1)
     }
   }
-  /* ---------------------- Funcion de Agregar al carrito --------------------- */
-  const onSubmit = () => {
-    toast.success(`Se agregaron ${count} unidades al carrito`, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
+  
   /* ------------------------- Componente presentacion ------------------------ */
   const StockButton = ({ handleOnClick, text }) => {
     return <Button className="stock-button" onClick={() => handleOnClick()}>{text}</Button>;
