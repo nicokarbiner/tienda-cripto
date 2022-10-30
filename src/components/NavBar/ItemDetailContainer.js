@@ -1,4 +1,3 @@
-import ItemList from "./ItemList";
 import {Container, Row, Col} from "react-bootstrap"
 import React from "react";
 import ItemDetail from "./ItemDetail";
@@ -8,7 +7,7 @@ export default function ItemDetailContainer ({ title, productId }) {
   React.useEffect(() => {
     const db = getFirestore()
     // 1. Traigo un producto
-    const productRef = doc(db, "productos", productId);
+    const productRef = doc(db, "items", productId);
     getDoc(productRef).then((snapshot) => {
       setItem({ id: snapshot.id, ...snapshot.data() });
       

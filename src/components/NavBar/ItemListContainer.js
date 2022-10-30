@@ -12,7 +12,7 @@ export default function ItemListContainer ({title, categoryId}) {
     if (categoryId) {
       // 3. Traigo una colleccion pero con filtros
       const q = query(
-        collection(db, "productos"),
+        collection(db, "items"),
         where("category_id", "==", categoryId)
       );
       getDocs(q).then((snapshots) => {
@@ -23,7 +23,7 @@ export default function ItemListContainer ({title, categoryId}) {
       });
     } else {
       // 2. Traigo una coleccion
-      const productsRef = collection(db, "productos");
+      const productsRef = collection(db, "items");
       getDocs(productsRef).then((snapshots) => {
         if (snapshots.size === 0) {
           console.log("No hay productos");
@@ -43,7 +43,7 @@ export default function ItemListContainer ({title, categoryId}) {
       );
     } else {
       const db = getFirestore();
-      const productsRef = collection(db, "productos");
+      const productsRef = collection(db, "items");
       getDocs(productsRef).then((snapshots) => {
         if (snapshots.size === 0) {
           console.log("No hay productos");
@@ -56,7 +56,7 @@ export default function ItemListContainer ({title, categoryId}) {
     setSearch(e.target.value);
     if(e.target.value === ""){
       const db = getFirestore();
-      const productsRef = collection(db, "productos");
+      const productsRef = collection(db, "items");
       getDocs(productsRef).then((snapshots) => {
         if (snapshots.size === 0) {
           console.log("No hay productos");

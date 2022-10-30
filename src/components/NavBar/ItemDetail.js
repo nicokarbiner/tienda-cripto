@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, Row, Col, Card} from "react-bootstrap"
+import {Card} from "react-bootstrap"
 import AddButton from "./AddButton";
 import { CartContext } from "../../context/CartContext";
 export default function ItemDetail ({item}) {

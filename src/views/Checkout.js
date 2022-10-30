@@ -24,7 +24,7 @@ export default function Checkout () {
     };
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
-    const productsCollection = collection(db, "productos");
+    const productsCollection = collection(db, "items");
     await addDoc(ordersCollection, order).then(({ id }) => {
       setOrderId(id);
       updateProducts();
@@ -35,7 +35,7 @@ export default function Checkout () {
   const updateProducts = async () => {
     const db = getFirestore();
     cart.forEach(async (item) => {
-      const productRef = doc(db, `productos`, item.id);
+      const productRef = doc(db, `items`, item.id);
       await runTransaction(db, async (transaction) => {
         const transfDoc = await transaction.get(productRef);
         if (!transfDoc.exists()) {
