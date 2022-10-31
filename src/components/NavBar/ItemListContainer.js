@@ -12,7 +12,7 @@ export default function ItemListContainer ({title, categoryId}) {
     const db = getFirestore();
     if (categoryId) {
       const q = query(collection (db, "items"),
-         where("category", "==", categoryId)
+         where("category_id", "==", categoryId)
          );
          getDocs(q).then((snapshots) => {
            if (snapshots.size === 0) {

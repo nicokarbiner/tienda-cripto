@@ -24,8 +24,8 @@ export default function Header() {
                 </NavLink>
               </Nav.Link>
               <NavDropdown title="Category List" id="basic-nav-dropdown">
-                  <Link to="/category/criptomoneda" className="nav-link" aria-current="page">Criptomoneda</Link>
-                  <Link to="/category/stablecoins" className="nav-link" aria-current="page">Stablecoins</Link>
+                  <Link to="/category/criptomoneda" className="nav-link" aria-current="page">CriptoMonedas</Link>
+                  <Link to="/category/stablecoins" className="nav-link" aria-current="page">StableCoins</Link>
                   <Link to="/category/utilitycoins" className="nav-link" aria-current="page">UtilityCoins</Link>
                 </NavDropdown>
                 </Nav>

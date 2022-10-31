@@ -13,10 +13,7 @@ export default function ItemDetail ({item}) {
       <Card.Img variant="top" src={item.image} />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Text> {item.text}</Card.Text>
         <h3>$ {item.price}</h3>
         {isInCart(item.id) ? (
           <Link to={"/Cart"}><Button variant="secondary">Go to Cart</Button></Link>

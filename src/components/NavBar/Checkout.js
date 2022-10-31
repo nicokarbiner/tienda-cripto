@@ -166,7 +166,7 @@ export default function CheckoutContainer () {
           <h1>Checkout Complete</h1>
           <Card.Title>Thank you for shopping at Tokenizar</Card.Title>
           <Card.Text>Your Following Order Is : {orderId}</Card.Text>
-          <Card.Text>Your items will be shipped in 2-3 days</Card.Text>
+          <Card.Text>Your criptos will be sent in 1 second</Card.Text>
           </Card.Body>
           <Col className="text-center">
           <Button variant="secondary" onClick={()=>navigate('/')}>Back to Home</Button>
