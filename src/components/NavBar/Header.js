@@ -1,14 +1,14 @@
 import CartWidget from "./CartWidget";
-import {Navbar, Container, Nav} from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom"
 
-export default function Header () {
+export default function Header() {
   return (
     <header>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand>
-            <Link to="/" >Tokenizar</Link>
+          <Navbar.Brand className="textLogo">
+            <Link to="/" className="nav-link active" aria-current="page">Tokenizar</Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -20,20 +20,15 @@ export default function Header () {
               </Nav.Link>
               <Nav.Link>
                 <NavLink to="/products">
-                  Productos
+                  Criptos
                 </NavLink>
               </Nav.Link>
-              <Nav.Link>
-                <NavLink to="/category/1">
-                  Categoria 1
-                </NavLink>
-              </Nav.Link>
-              <Nav.Link>
-                <NavLink to="/category/2">
-                  Categoria 2
-                </NavLink>
-              </Nav.Link>
-            </Nav>
+              <NavDropdown title="Category List" id="basic-nav-dropdown">
+                  <Link to="/category/criptomoneda" className="nav-link" aria-current="page">Criptomoneda</Link>
+                  <Link to="/category/stablecoins" className="nav-link" aria-current="page">Stablecoins</Link>
+                  <Link to="/category/utilitycoins" className="nav-link" aria-current="page">UtilityCoins</Link>
+                </NavDropdown>
+                </Nav>
           </Navbar.Collapse>
           <CartWidget />
         </Container>

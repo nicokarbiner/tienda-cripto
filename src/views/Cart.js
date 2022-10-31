@@ -1,37 +1,57 @@
-import React from "react";
-import Header from "../components/NavBar/Header"
-import { useNavigate } from "react-router-dom";
+import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react"
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import { Link } from "react-router-dom"
+import CartItem from "../components/NavBar/CartItem";
 import { CartContext } from "../context/CartContext";
-import { Container, Col, Row, Button } from "react-bootstrap";
-import CartList from "../components/NavBar/CartList";
-export default function Cart() {
-  const navigate = useNavigate();
-  const {cart, deleteAll} = React.useContext(CartContext)
+
+export default function Cart () {
+
+  const {cart, deleteAll, cartTotalPrice} = React.useContext(CartContext)
+
   return (
-    <div>
-      <Header />
-      <Container className={"itemlist-container"}>
-        <Row className="mt-5">
-          <Col>
-            <h1>Tu carrito</h1>
-          </Col>
-        </Row>
-        <Row>
-          <CartList items={cart} />
-        </Row>
-        <Row>
-          <Col xs={6} className="px-2">
-            <Button onClick={() => navigate("/checkout")} style={{ width: "100%" }}>
-              Finalizar compra
-            </Button>
-          </Col>
-          <Col xs={6} className="px-2">
-            <Button onClick={deleteAll} style={{ width: "100%" }}>
-              Borrar carrito
-            </Button>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
+    !cart.length ? 
+    <Container>
+      <Row className="empty-cart text-center">
+        <Col>
+          <h2>Your cart is currently Empty</h2>
+            <Link to={"/home"}><FontAwesomeIcon icon={faArrowLeftLong}/>Back to the store</Link>
+        </Col>
+      </Row>
+    </Container> :
+      <Container className="mt-3">
+          <h1>This Is Your Cart</h1>
+          <Row>
+            <Col>
+            <Row className="text-end">
+            <Col><Button onClick={() => deleteAll()}>Delete All Products</Button></Col>
+          </Row>
+          <Row className="text-end">
+          </Row>
+            <Table responsive>
+              <thead>
+              <tr>
+                  <th>Item</th>
+                  <th></th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((item) => <CartItem item={item} key={item.id}/>)}
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>Total</td>
+                  <td>${cartTotalPrice()}</td>
+                  <td><Col><Link to={"/checkout"}><Button variant="success">Checkout</Button></Link></Col></td>
+                </tr>
+              </tbody>
+            </Table>
+            </Col>
+          </Row>
+        </Container>
+  )
 }
